@@ -131,8 +131,8 @@ local function RandomNumber(Min: Number, Max: Number): Number
 end
 ```
 ## 3.4 How_To WriteVariable NAMES
-> There are many ways of writing variable names such as: PascalCase, camelCase, snake_case
-> 
-> All of them are completely fine to use but should be used consistently with your coding accent
-> 
-> The Luau Styling guide that Roblox uses states that names should be spelt out fully, not abreviated to increase the readability of the code. Use PascalCase for Roblox API, since most camelCase API is deprecated. Use SCREAMING_SNAKE_CASE for constant variables (variables that do not change through the runtime of the script)
+There are many ways of writing variable names such as: PascalCase, camelCase, snake_case
+
+All of them are completely fine to use but should be used consistently with your coding accent
+
+The Luau Styling guide that Roblox uses states that names should be spelt out fully, not abreviated to increase the readability of the code. Use PascalCase for Roblox API, since most camelCase API is deprecated. Use SCREAMING_SNAKE_CASE for constant variables (variables that do not change through the runtime of the script)
