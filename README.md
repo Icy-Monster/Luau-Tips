@@ -86,20 +86,20 @@ While one may think that code is purely written to be as most efficient as possi
 All operators have their own syntax for shortening and simplifying your code to make it more readable such as:
 ```lua
 Math Operators
-X = X + 1  -X += 1
-X = X - 1  -X -= 1
-X = X * X  -X *= X
-X = X / X  -X /= X
+X = X + 1  -> X += 1
+X = X - 1  -> X -= 1
+X = X * X  -> X *= X
+X = X / X  -> X /= X
 
 String Operators
-X = X.."JoinStrings" -X ..= "JoinStrings"
+X = X.."JoinStrings" -> X ..= "JoinStrings"
 
 Comparing Operators:
-if X == true then -if X then
-if X == false then -if not X then
+if X == true then -> if X then
+if X == false then -> if not X then
 
 
-if not X == 1 then -if X ~= 1 then
+if not X == 1 then -> if X ~= 1 then
 ```
 This helps to shorten the code while increasing its readability, there is no performance change between the two ways of writing the syntax. Since it is compiled into the same bytecode
 
