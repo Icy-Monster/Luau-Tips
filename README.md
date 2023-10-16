@@ -1,16 +1,6 @@
 
 ## Readability and Reliability for Luau
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
-\
+ㅤ
 # 1.0 Introduction
 This is a simple guide to writing reliable and quickly readable code that is universaly known to all programmers. It includes many aspects of coding and many practices of formatting and writing code
 
@@ -67,7 +57,7 @@ for i, v in {} do
 end
 ```
 
-### GOOD: 
+### GOOD:
 ```lua
 for i, v in {} do
     print(i)
