@@ -31,9 +31,11 @@ While this may look like the best way to create an instance it can sometimes be 
 ### BAD:
 ```lua
 local Part = Instance.new("Part", workspace)
---Once the parent is set the Physics engine will check if its anchored and since it isnt it will start tracking it
+--Once the parent is set the Physics engine will check if its anchored.
+--Since it isnt it will start tracking it
 Part.Anchored = true
---The part is anchored so the Physics engine will stop tracking it and this will create an overhead
+--The part is anchored so the Physics engine will stop tracking it.
+--This will create an overhead
 ```
 ### GOOD:
 ```lua
@@ -41,7 +43,8 @@ local Part = Instance.new("Part")
 Part.Anchored = true
 
 Part.Parent = workspace
---Once the parent is set the Physics engine will check if its anchored and since it isn't it will not start tracking it. This will not create any overhead
+--Once the parent is set the Physics engine will check if its anchored and since it isn't it will not start tracking it.
+--This will not create any overhead
 ```
 When you set the parent with the 2nd arguement of Instance.new it sets its parent immediately after the instance is made, meaning that it will also render and fire off RBXLSignalEvents for when the part is created. If you edit properties after setting the parent of an instance it can cause performance drops since you are editing the properties while it has running events and is being rendered.
 
