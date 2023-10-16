@@ -130,7 +130,7 @@ The syntax for defining a variables type is:
 local MyNumber: Number = 0
 ```
 
-The syntax for defining a function type is:
+The syntax for defining types in a function is:
 ```lua
 local function RandomNumber(Min: Number, Max: Number): Number
     return math.random(Min * 100, Max * 100)/100
