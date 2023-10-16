@@ -1,6 +1,16 @@
 
-## Readable Code for the Present and for the Future
-
+## Readability and Reliability for Luau
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
+\
 # 1.0 Introduction
 This is a simple guide to writing reliable and quickly readable code that is universaly known to all programmers. It includes many aspects of coding and many practices of formatting and writing code
 
