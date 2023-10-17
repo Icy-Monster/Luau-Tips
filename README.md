@@ -135,7 +135,7 @@ local MyNumber: Number = 0
 
 The syntax for defining types in a function is:
 ```lua
-local function RandomNumber(Min: Number, Max: Number): Number
+local function RandomDecimal(Min: Number, Max: Number): Number
     return math.random(Min * 100, Max * 100)/100
 end
 ```
