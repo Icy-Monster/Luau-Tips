@@ -63,7 +63,7 @@ Part.Parent = workspace
 
 -- Connect Signals
 Part.Touched:Connect(function(TouchedPart: BasePart)
-	print(TouchedPart.Name)
+    print(TouchedPart.Name)
 end)
 ```
 
