@@ -1,6 +1,24 @@
 
 ## Readability and Reliability for Luau
-ㅤ
+
+# Table of Contents
+### [Introduction](#-1.0-Introduction) 1.0  
+
+### [Deprecations and Bad Practices](#-2.0-Deprecations-and-Bad-Practicesn) 2.0  
+[The Task Library](##-2.1-The-Task-Library) **----------------------------------------**  2.1  
+[Parts and MeshParts (BaseParts)](##-2.2-Parts-and-MeshParts-(BaseParts)) **----------------------** 2.2  
+[The Invisible Variables](##-2.3-The-Invisible-Variables) **---------------------------------** 2.3  
+
+### [The Art Side of Coding (Syntax)](#-3.0-The-Art-Side-of-Coding-(Syntax)) 3.0  
+[Operator Syntax](##-3.1-Operator-Syntax)
+**---------------------------------------** 3.1  
+[Variables](##-3.2-Variables)
+**-----------------------------------------------** 3.2  
+[Strongly Strict Typing](##-3.3-Strongly-Strict-Typing)
+**----------------------------------** 3.3  
+[How_To WriteVariable NAMES](##-3.4-How_To-WriteVariable-NAMES)
+**------------------------** 3.4
+
 # 1.0 Introduction
 This is a simple guide to writing reliable and quickly readable code that is universaly known to all programmers. It includes many aspects of coding and many practices of formatting and writing code.
 
@@ -138,7 +156,7 @@ Between the 2, Local variables should be used the most. Due to their performance
 
 Variables can have many values inside of them, some can have predetermined values such as when you are using **strict typing**
 
-## 3.3 Strongly Strict typing
+## 3.3 Strongly Strict Typing
 Strict typing or otherwise known as strong typing is a method of programming with strictly defined types for each value.
 
 To use strict typing in Luau you have to declare it at the **top** of your script:
