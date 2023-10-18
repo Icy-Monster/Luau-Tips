@@ -63,7 +63,7 @@ Part.Parent = workspace
 
 -- Connect Signals
 Part.Touched:Connect(function(TouchedPart: BasePart)
-	Part.Size += Vector3.new(10,10,10)
+	print(TouchedPart.Name)
 end)
 ```
 
