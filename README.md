@@ -4,19 +4,19 @@
 # Table of Contents
 ### [Introduction](#10-Introduction) 1.0  
 
-### [Deprecations and Bad Practices](#20-Deprecations-and-Bad-Practicesn) 2.0  
-[The Task Library](##21-The-Task-Library) **----------------------------------------**  2.1  
-[Parts and MeshParts (BaseParts)](##22-Parts-and-MeshParts-(BaseParts)) **----------------------** 2.2  
-[The Invisible Variables](##23-The-Invisible-Variables) **---------------------------------** 2.3  
+### [Deprecations and Bad Practices](#20-Deprecations-and-Bad-Practices) 2.0  
+[The Task Library](#21-The-Task-Library) **----------------------------------------**  2.1  
+[Parts and MeshParts (BaseParts)](#22-Parts-and-MeshParts-(BaseParts)) **----------------------** 2.2  
+[The Invisible Variables](#23-The-Invisible-Variables) **---------------------------------** 2.3  
 
 ### [The Art Side of Coding (Syntax)](#30-The-Art-Side-of-Coding-(Syntax)) 3.0  
-[Operator Syntax](##31-Operator-Syntax)
+[Operator Syntax](#31-Operator-Syntax)
 **---------------------------------------** 3.1  
-[Variables](##32-Variables)
+[Variables](#32-Variables)
 **-----------------------------------------------** 3.2  
-[Strongly Strict Typing](##33-Strongly-Strict-Typing)
+[Strongly Strict Typing](#33-Strongly-Strict-Typing)
 **----------------------------------** 3.3  
-[How_To WriteVariable NAMES](##34-How_To-WriteVariable-NAMES)
+[How_To WriteVariable NAMES](#34-How_To-WriteVariable-NAMES)
 **------------------------** 3.4
 
 # 1.0 Introduction
