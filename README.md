@@ -2,7 +2,9 @@
 ## Readability and Reliability for Luau
 ㅤ
 # 1.0 Introduction
-This is a simple guide to writing reliable and quickly readable code that is universaly known to all programmers. It includes many aspects of coding and many practices of formatting and writing code
+This is a simple guide to writing reliable and quickly readable code that is universaly known to all programmers. It includes many aspects of coding and many practices of formatting and writing code.
+
+This guide requires basic knowledge of Lua. The guide does not explain programming in Lua, but common bugs and problems with readability.
 
 # 2.0 Deprecations and Bad Practices
 ## 2.1 The Task Library
@@ -31,11 +33,11 @@ While this may look like the best way to create an instance it can sometimes be 
 ### BAD:
 ```lua
 local Part = Instance.new("Part", workspace)
---Once the parent is set the Physics engine will check if its anchored.
---Since it isnt it will start tracking it
+-- Once the parent is set the Physics engine will check if its anchored.
+-- Since it isnt it will start tracking it
 Part.Anchored = true
---The part is anchored so the Physics engine will stop tracking it.
---This will create an overhead
+-- The part is anchored so the Physics engine will stop tracking it.
+-- This will create an overhead
 ```
 ### GOOD:
 ```lua
@@ -43,10 +45,27 @@ local Part = Instance.new("Part")
 Part.Anchored = true
 
 Part.Parent = workspace
---Once the parent is set the Physics engine will check if its anchored and since it isn't it will not start tracking it.
---This will not create any overhead
+-- Once the parent is set the Physics engine will check if its anchored and since it isn't it will not start tracking it.
+-- This will not create any overhead
 ```
 When you set the parent with the 2nd arguement of Instance.new it sets its parent immediately after the instance is made, meaning that it will also render and fire off RBXLSignalEvents for when the part is created. If you edit properties after setting the parent of an instance it can cause performance drops since you are editing the properties while it has running events and is being rendered.
+
+The proper sequence that you should set up properties/connections is:
+```lua
+-- Instance.new
+local Part = Instance.new("Part")
+
+-- Assign Properties
+Part.Anchored = true
+
+-- Assign Parent
+Part.Parent = workspace
+
+-- Connect Signals
+Part.Touched:Connect(function(TouchedPart: BasePart)
+	Part.Size += Vector3.new(10,10,10)
+end)
+```
 
 ## 2.3 The Invisible Variables
 Sometimes you may just not see a built-in function in Roblox and then you try making it yourself. All Roblox API (Application Programming Interface) is written in C++ so it is marginaly faster than recreating it yourself in Luau.
@@ -74,7 +93,7 @@ While you are looking at what variables you should use, you should also look at 
 
 ### BAD: 
 ```lua
-for i, v: BasePart in {} do
+for i, v in {} do
     Part.Position += Vector3.new(1,0,0)
 end
 ```
@@ -124,7 +143,7 @@ Strict typing or otherwise known as strong typing is a method of programming wit
 
 To use strict typing in Luau you have to declare it at the **top** of your script:
 ```lua
---!strict
+-- !strict
 Rest of the code
 ```
 
