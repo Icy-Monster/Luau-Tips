@@ -6,7 +6,7 @@
 
 ### [Deprecations and Bad Practices](#20-Deprecations-and-Bad-Practices) 2.0  
 [The Task Library](#21-The-Task-Library) **----------------------------------------**  2.1  
-[Parts and MeshParts (BaseParts)](#22-Parts-and-MeshParts-(BaseParts)) **----------------------** 2.2  
+[Parts and MeshParts (BaseParts)](#22-parts-and-meshparts-baseparts) **----------------------** 2.2  
 [The Invisible Variables](#23-The-Invisible-Variables) **---------------------------------** 2.3  
 
 ### [The Art Side of Coding (Syntax)](#30-The-Art-Side-of-Coding-(Syntax)) 3.0  
