@@ -8,7 +8,7 @@
 [The Task Library](#21-The-Task-Library) **----------------------------------------**  2.1  
 [Parts and MeshParts (BaseParts)](#22-parts-and-meshparts-baseparts) **----------------------** 2.2  
 [The Invisible Variables](#23-The-Invisible-Variables) **---------------------------------** 2.3  
-[The more lines the better... right?](#24-the-more-lines-the-better-right) **---------------------------------** 2.4  
+[The more lines the better... right?](#24-the-more-lines-the-better-right) **---------------------** 2.4  
 
 ### [The Art Side of Coding (Syntax)](#30-The-Art-Side-of-Coding-(Syntax)) 3.0  
 [Operator Syntax](#31-Operator-Syntax)
