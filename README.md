@@ -48,7 +48,6 @@ Instance.new(ClassName, Parent)
 ```
 While this may look like the best way to create an instance it can sometimes be less efficient if you do not know what you are doing. The primary optimization here will be the 2nd arguement when using Instance.new().
 
-### BAD:
 ```lua
 local Part = Instance.new("Part", workspace)
 -- Once the parent is set the Physics engine will check if its anchored.
@@ -57,7 +56,9 @@ Part.Anchored = true
 -- The part is anchored so the Physics engine will stop tracking it.
 -- This will create an overhead
 ```
-### GOOD:
+
+### ->
+
 ```lua
 local Part = Instance.new("Part")
 Part.Anchored = true
@@ -90,7 +91,6 @@ Sometimes you may just not see a built-in function in Roblox and then you try ma
 
 You might just overlook some clear features that the API offers to you such as:
 
-### BAD: 
 ```lua
 local Index = 0
 
@@ -100,7 +100,8 @@ for i, v in {} do
 end
 ```
 
-### GOOD:
+### ->
+
 ```lua
 for i, v in {} do
     print(i)
@@ -109,19 +110,47 @@ end
 
 While you are looking at what variables you should use, you should also look at what variables to hide. You should also not be scared of naming variables to something that describes them instead of using single letters like i or v
 
-### BAD: 
 ```lua
 for i, v in {} do
     Part.Position += Vector3.new(1,0,0)
 end
 ```
 
-### GOOD: 
+### ->
 ```lua
 for _, Part: BasePart in {} do
     Part.Position += Vector3.new(1,0,0)
 end
 ```
+
+
+## 2.4 The more lines the better... right?
+No. Just no, the exact opposite applies. The less lines there are the more readable it is (Do not take this to the extreme). A lot of the times when we are making functions we think about the task logically in our heads, so we take it one step at a time but sometimes it may be better to just take all steps at the same time. Here are some common examples on where you can improve:
+
+```lua
+    local function PointInRectangle(Point: Vector2, Rectangle: Vector2, RectangleSize: Vector2): boolean
+	if point.x >= rectPos.x and point.x <= (rectPos.x + rectSize.x) then
+		if point.y >= rectPos.y and point.y <= (rectPos.y + rectSize.y)  then
+			return true
+		end
+	end
+	
+	return false
+end
+```
+
+### ->
+
+```lua
+local function PointInRectangle(Point: Vector2, Rectangle: Vector2, RectangleSize: Vector2): boolean
+	return point.x >= rectPos.x and point.x <= (rectPos.x + rectSize.x) and 
+		   point.y >= rectPos.y and point.y <= (rectPos.y + rectSize.y)
+end
+
+```
+Look at how cleaner that is, and more readable. 
+
+
 # 3.0 The Art Side of Coding (Syntax)
 https://roblox.github.io/lua-style-guide/
 
@@ -139,10 +168,9 @@ X = X / X  -> X /= X
 String Operators
 X = X.."JoinStrings" -> X ..= "JoinStrings"
 
-Comparing Operators:
+Boolean Operators:
 if X == true then -> if X then
 if X == false then -> if not X then
-
 
 if not X == 1 then -> if X ~= 1 then
 ```
