@@ -145,7 +145,7 @@ end
 ```lua
 local function PointInRectangle(Point: Vector2, Rectangle: Vector2, RectangleSize: Vector2): boolean
 	return point.x >= rectPos.x and point.x <= (rectPos.x + rectSize.x) and 
-		   point.y >= rectPos.y and point.y <= (rectPos.y + rectSize.y)
+		point.y >= rectPos.y and point.y <= (rectPos.y + rectSize.y)
 end
 
 ```
