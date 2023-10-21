@@ -18,9 +18,9 @@
 [Strongly Strict Typing](#33-Strongly-Strict-Typing)
 **----------------------------------** 3.3  
 [How_To WriteVariable NAMES](#34-How_To-WriteVariable-NAMES)
-**------------------------** 3.4
+**------------------------** 3.4  
 [Paragraphs](#35-Paragraphs)
-**------------------------** 3.4
+**------------------------** 3.5  
 
 # 1.0 Introduction
 This is a simple guide to writing reliable and quickly readable code that is universaly known to all programmers. It includes many aspects of coding and many practices of formatting and writing code.
