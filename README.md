@@ -19,6 +19,8 @@
 **----------------------------------** 3.3  
 [How_To WriteVariable NAMES](#34-How_To-WriteVariable-NAMES)
 **------------------------** 3.4
+[Paragraphs](#35-Paragraphs)
+**------------------------** 3.4
 
 # 1.0 Introduction
 This is a simple guide to writing reliable and quickly readable code that is universaly known to all programmers. It includes many aspects of coding and many practices of formatting and writing code.
@@ -217,3 +219,40 @@ You can use Robloxs lua styling guide:
 * Spell out words fully, abbreviations may save time but may also cause confusion to the reader
 - SCREAMING_SNAKE_CASE for Constant (Non-Changing) variables
 - Acronyms that  represent a set (XYZ, RGB, ...) should be fully capitalized, but acronyms that do not respesent a set should only have their starting letter be capitalized (Http, Json, ...)
+
+## 3.5 Paragraphs
+While programming languages aren't structured as normal writings, they still contain aspects of them. When scripting you would want to increase the readability by seperating your code into chunks. These chunks would each share a simiral task such as:
+
+```lua
+local Part = Instance.new("Part")
+Part.Anchored = true
+Part.CanCollide = false
+Part.Size = Vector3.new(10,10,10)
+Part.Position = Vector3.new(0,10,0)
+Part.Color = Color3.fromRGB(255,255,0)
+Part.Parent = workspace
+Part.Touched:Connect(function(TouchedPart: BasePart)
+	print(TouchedPart.Name)
+end)
+```
+
+### ->
+
+```lua
+local Part = Instance.new("Part")
+Part.Anchored = true
+Part.CanCollide = false
+
+Part.Size = Vector3.new(10,10,10)
+Part.Position = Vector3.new(0,10,0)
+Part.Color = Color3.fromRGB(255,255,0)
+
+Part.Parent = workspace
+
+
+Part.Touched:Connect(function(TouchedPart: BasePart)
+	print(TouchedPart.Name)
+end)
+```
+
+You can see how much the readability increases, just by seperating it into small chunks that share a common task. While there are no clear rules of how you should seperate your code, you should always focus on each group doing a simiral task.
