@@ -268,7 +268,7 @@ Here's a small example that displays nesting and how to fix it:
 ```lua
 Part.Touched:Connect(function(TouchedPart: BasePart)
 	if TouchedPart.Parent:FindFirstChild("Humanoid") then
-		if TouchedPart.Parent:FindFirstChild("Shield") then
+		if not TouchedPart.Parent:FindFirstChild("Shield") then
 			TouchedPart.Parent:Destroy()
 		end
 	end
