@@ -202,6 +202,18 @@ The syntax for defining a variable type is:
 ```lua
 local MyNumber: Number = 0
 ```
+This can quickly become quite complex. So you can create types and reuse them such as:
+```lua
+type Voxel = {
+	Distance: number,
+	Position: Vector3,
+
+	LifeTime: number
+}
+
+local Example: Voxel = {}
+```
+
 
 The syntax for defining types in a function is:
 ```lua
