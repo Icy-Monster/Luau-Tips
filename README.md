@@ -10,7 +10,7 @@
 [The Invisible Variables](#23-The-Invisible-Variables) **---------------------------------** 2.3  
 [The more lines the better... right?](#24-the-more-lines-the-better-right) **---------------------** 2.4  
 
-### [The Art Side of Coding (Syntax)](#30-The-Art-Side-of-Coding-(Syntax)) 3.0  
+### [The Art Side of Coding (Syntax)](#30-the-art-side-of-coding-syntax) 3.0  
 [Operator Syntax](#31-Operator-Syntax)
 **---------------------------------------** 3.1  
 [Variables](#32-Variables)
