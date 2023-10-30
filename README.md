@@ -275,7 +275,7 @@ Part.Touched:Connect(function(TouchedPart: BasePart)
 end)
 ```
 
-Here is a simple way of handling it: 
+### ->
 
 ```lua
 Part.Touched:Connect(function(TouchedPart: BasePart)
