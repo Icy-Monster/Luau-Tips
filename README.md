@@ -4,7 +4,7 @@
 # Table of Contents
 ### [Introduction](#10-Introduction) 1.0  
 
-### [Deprecations and Bad Practices](#20-Deprecations-and-Bad-Practices) 2.0  
+### [Deprecations and Misconceptions](#20-Deprecations-and-Misconceptions) 2.0  
 [The Task Library](#21-The-Task-Library) **----------------------------------------**  2.1  
 [Parts and MeshParts (BaseParts)](#22-parts-and-meshparts-baseparts) **----------------------** 2.2  
 [The Invisible Variables](#23-The-Invisible-Variables) **---------------------------------** 2.3  
@@ -21,13 +21,15 @@
 **------------------------** 3.4  
 [Paragraphs](#35-Paragraphs)
 **--------------------------------------------** 3.5  
+[Paragraphs](#36-Nesting)
+**--------------------------------------------** 3.6  
 
 # 1.0 Introduction
 This is a simple guide to writing reliable and quickly readable code that is universaly known to all programmers. It includes many aspects of coding and many practices of formatting and writing code.
 
 This guide requires basic knowledge of Lua. The guide does not explain programming in Lua, but common bugs and problems with readability.
 
-# 2.0 Deprecations and Bad Practices
+# 2.0 Deprecations and Misconceptions
 ## 2.1 The Task Library
 https://create.roblox.com/docs/reference/engine/libraries/task
 Roblox introduced the Task library in august of 2021, with the Task library being used to directly talk to the game engines task schedule of tasks to be ran.
@@ -256,3 +258,32 @@ end)
 ```
 
 You can see how much the readability increases, just by seperating it into small chunks that share a common task. While there are no clear rules of how you should seperate your code, you should always focus on each group doing a simiral task.
+
+## 3.6 Nesting
+Closely related to paragraphs, nesting is how many "levels" that your code has.
+If not quickly handled nesting can become a nightmare to look at.
+
+Here's a small example that displays nesting and how to fix it:
+
+```lua
+Part.Touched:Connect(function(TouchedPart: BasePart)
+	if TouchedPart.Parent:FindFirstChild("Humanoid") then
+		if TouchedPart.Parent:FindFirstChild("Shield") then
+			TouchedPart.Parent:Destroy()
+		end
+	end
+end)
+```
+
+Here is a simple way of handling it: 
+
+```lua
+Part.Touched:Connect(function(TouchedPart: BasePart)
+	if not TouchedPart.Parent:FindFirstChild("Humanoid") then return end
+	if TouchedPart.Parent:FindFirstChild("Shield") then return end
+
+	TouchedPart.Parent:Destroy()
+end)
+```
+
+Nesting should always be avoided, since it makes the code harder to read.
