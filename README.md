@@ -30,6 +30,9 @@ This is a simple guide to writing reliable and readable code that is universally
 This guide requires basic knowledge of Luau. The guide does not explain programming in Lua, but common mistakes and problems with readability.
 
 # 2.0 Deprecations and Misconceptions
+
+Luau is a growing language, meaning that it may deprecate older APIs. It is best to avoid using older/deprecated APIs, for obvious reasons. Before you quickly update your code with the newest, fanciest APIs you should always check what changes were made.
+
 ## 2.1 The Task Library
 https://create.roblox.com/docs/reference/engine/libraries/task
 Roblox introduced the Task library in August of 2021, with the Task library being used to directly talk to the game engine's task schedule of tasks to be ran.
