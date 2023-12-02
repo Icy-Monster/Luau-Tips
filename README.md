@@ -25,14 +25,14 @@
 **-----------------------------------------------** 3.6  
 
 # 1.0 Introduction
-This is a simple guide to writing reliable and quickly readable code that is universally known to all programmers. It includes many aspects of coding and many practices of formatting and writing code.
+This is a simple guide to writing reliable and readable code that is universally known to all programmers. It includes many aspects of coding and many practices of formatting and writing code.
 
-This guide requires basic knowledge of Lua. The guide does not explain programming in Lua, but common bugs and problems with readability.
+This guide requires basic knowledge of Luau. The guide does not explain programming in Lua, but common mistakes and problems with readability.
 
 # 2.0 Deprecations and Misconceptions
 ## 2.1 The Task Library
 https://create.roblox.com/docs/reference/engine/libraries/task
-Roblox introduced the Task library in August of 2021, with the Task library being used to directly talk to the game engine's task schedule of tasks to be run.
+Roblox introduced the Task library in August of 2021, with the Task library being used to directly talk to the game engine's task schedule of tasks to be ran.
 
 It brought and deprecated many functions, such as:
 
@@ -41,7 +41,7 @@ wait(x: Number): Number -> task.wait(x: Number): Number
 
 spawn(function) -> task.defer(function)
 ```
-While wait() is fundamentally the same it still differs from task.wait().
+While wait() is fundamentally the same, it still differs from task.wait().
 The difference is in the precision of the yield, coming from 1/30 of a second to 1/60 of a second with the Task Library
 
 ## 2.2 Parts and MeshParts (BaseParts)
@@ -51,7 +51,7 @@ To create a BasePart you can use
 ```lua
 Instance.new(ClassName, Parent)
 ```
-While this may look like the best way to create an instance, it can sometimes be less efficient if you do not know what you are doing. The primary optimisation here will be the 2nd argument when using Instance.new().
+While this may look like the best way to create an instance, it can sometimes be less efficient, if you do not know what you are doing. The primary optimisation here will be the 2nd argument when using Instance.new().
 
 ```lua
 local Part = Instance.new("Part", workspace)
@@ -71,7 +71,7 @@ Part.Anchored = true
 Part.Parent = workspace
 -- Once the parent is set the Physics engine will check if its anchored and since it isn't it will not start tracking it.
 -- This will not create any overhead
-```
+```	
 When you set the parent with the 2nd argument of Instance.new it sets its parent immediately after the instance is made, meaning that it will also render and fire off RBXLSignalEvents for when the part is created. If you edit properties after setting the parent of an instance it can cause performance drops since you are editing the properties while it has running events and is being rendered.
 
 The proper sequence that you should set up properties/connections is:
@@ -92,7 +92,7 @@ end)
 ```
 
 ## 2.3 The Invisible Variables
-Sometimes you may just not see a built-in function in Roblox and then you try making it yourself. All Roblox API (Application Programming Interface) is written in C++ so it is marginaly faster than recreating it yourself in Luau.
+Sometimes you may just not see a built-in function in Roblox and then you try making it yourself. All Roblox API (Application Programming Interface) is written in C++ so it is considerably faster than recreating it yourself in Luau.
 
 You might just overlook some clear features that the API offers to you such as:
 
@@ -113,7 +113,7 @@ for i, v in {} do
 end
 ```
 
-While you are looking at what variables you should use, you should also look at what variables to hide. You should also not be scared of naming variables to something that describes them instead of using single letters like i or v
+While you are looking at what variables you should use, you should also look at what variables to hide. You should also not be scared of naming variables to something that describes them instead of using single letters such as i or v
 
 ```lua
 for i, v in {} do
@@ -130,7 +130,7 @@ end
 
 
 ## 2.4 The more lines, the better... right?
-No. Just no; the exact opposite applies. The less lines there are the more readable it is (do not take this to the extreme). A lot of the time, when we are making functions we think about the task logically in our heads, so we take it one step at a time but sometimes it may be better to just take all steps at the same time. Here is a common examples on where you can improve:
+No. Just no; the exact opposite applies. The less lines there are, the more readable it is (do not take this to the extreme). A lot of the time, when we are making functions we think about the task logically in our heads, so we take it one step at a time but sometimes it may be better to just take all steps at the same time. Here is a common examples on where you can improve:
 
 ```lua
     local function PointInRectangle(Point: Vector2, Rectangle: Vector2, RectangleSize: Vector2): boolean
@@ -153,8 +153,6 @@ local function PointInRectangle(Point: Vector2, Rectangle: Vector2, RectangleSiz
 end
 
 ```
-Look at how cleaner that is, and more readable. 
-
 
 # 3.0 The Art Side of Coding (Syntax)
 https://roblox.github.io/lua-style-guide/
@@ -183,19 +181,20 @@ This helps to shorten the code while increasing its readability, there is no per
 
 ## 3.2 Variables
 There are 2 types of variables: **Local Variables** and **Global Variables**,
-the difference between these 2 types is the scope of their declaration. Global variables have their scopes outside all functions, while Local variables are scoped inside a function Block
+the difference between these 2 types is the scope of their declaration. Global variables have their scopes globally, meaning that you can access them from anywhere, while Local variables are scoped inside a function block, meaning you will only be able to access them inside of that function block
 
 Between the 2, Local variables should be used the most. Due to their performance benefits when compared to Global variables and their memory costs
 
 Variables can have many values inside of them, some can have predetermined values such as when you are using **strict typing**
 
 ## 3.3 Strongly Strict Typing
-Strict typing, or otherwise known as strong typing is a method of programming with strictly defined types for each value.
+Strict typing, or otherwise known as strong typing is a method of programming with strictly defined types for values.
 
 To use strict typing in Luau you have to declare it at the **top** of your script:
 ```lua
 -- !strict
-Rest of the code
+
+Rest of the code goes here
 ```
 
 The syntax for defining a variable type is:
@@ -221,6 +220,8 @@ local function RandomDecimal(Min: Number, Max: Number): Number
     return math.random(Min * 100, Max * 100)/100
 end
 ```
+
+Here Min and Max are both numbers, and the return is also a number
 ## 3.4 How_To WriteVariable NAMES
 There are many ways of writing variable names such as: PascalCase, camelCase, snake_case and many more variations.
 
@@ -235,7 +236,7 @@ You can use Robloxs lua styling guide:
 - Acronyms that  represent a set (XYZ, RGB, ...) should be fully capitalized, but acronyms that do not respesent a set should only have their starting letter be capitalized (Http, Json, ...)
 
 ## 3.5 Paragraphs
-While programming languages aren't structured as normal writings, they still contain aspects of them. When scripting you would want to increase the readability by separating your code into chunks. These chunks would each share a similar task such as:
+While programming languages aren't structured as normal literacy, they still contain aspects of them. When scripting you would want to increase the readability by separating your code into chunks. These chunks would each share a similar task such as:
 
 ```lua
 local Part = Instance.new("Part")
@@ -254,6 +255,7 @@ end)
 
 ```lua
 local Part = Instance.new("Part")
+
 Part.Anchored = true
 Part.CanCollide = false
 
@@ -263,13 +265,12 @@ Part.Color = Color3.fromRGB(255,255,0)
 
 Part.Parent = workspace
 
-
 Part.Touched:Connect(function(TouchedPart: BasePart)
 	print(TouchedPart.Name)
 end)
 ```
 
-You can see how much the readability increases just by segregating it into small chunks that share a common task. While there are no clear rules for how you should separate your code, you should always focus on each group doing a similar task.
+You can see how much the readability increases just by segregating it into small chunks that share a common task. While there are no clear rules for how you should separate your code, you should always focus on seperating groups that share a common task.
 
 ## 3.6 Nesting
 Closely related to paragraphs, nesting is how many "levels" your code has.
@@ -299,3 +300,4 @@ end)
 ```
 
 Nesting should always be avoided, since it makes the code harder to read.
+It is best to tackle nesting before it becomes an issue.
