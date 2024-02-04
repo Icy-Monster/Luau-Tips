@@ -120,7 +120,7 @@ While you are looking at what variables you should use, you should also look at 
 
 ```lua
 for i, v in {} do
-    Part.Position += Vector3.new(1,0,0)
+    v.Position += Vector3.new(1,0,0)
 end
 ```
 
