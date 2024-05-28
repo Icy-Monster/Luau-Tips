@@ -230,7 +230,7 @@ There are many ways of writing variable names such as: PascalCase, camelCase, sn
 
 All of them are completely fine to use but should be used consistently with your coding accent.
 
-You can use Robloxs lua styling guide:
+You can use Roblox's Luau styling guide:
 * PascalCase for class and enum-like objects
 * PascalCase for Roblox API (camelCase versions are deprecated)
 * camelCase for Local variables
